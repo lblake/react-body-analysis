@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import ColumnHeaders from './components/ColumnHeaders';
+import ColumnInputs from './components/ColumnInputs';
 
 function App() {
+  const [inputState, setInputState] = useState([
+    [
+      {
+        name: 'Date',
+        value: '',
+      },
+      {
+        name: 'Total Body Weight',
+        value:'',
+      },
+      {
+        name:'Fat %',
+        value: '',
+        rangeMin: 16,
+        rangeMax: 20
+      }
+    ],
+    [],
+  ]);
+
+  const handleInput =  () => {
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ColumnHeaders />
+      <ColumnInputs date={inputState[0][0].value} totalBodyWeight={inputState[0][1].value}/>
+      <ColumnInputs />
     </div>
   );
 }
