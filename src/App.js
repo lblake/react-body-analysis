@@ -70,9 +70,11 @@ function App() {
 
   const handleInput = (event) => {
     event.preventDefault();
+    setInputState({ value:event.target.value });
   };
   return (
     <div>
+      <h1>BODY ANALYSIS</h1>
       <ColumnHeaders
         dateText={'Date'}
         totalBodyText={'Total Body Weight'}
@@ -89,6 +91,7 @@ function App() {
       />
 
       <ColumnInputs
+        onChange={handleInput}
         dateValue={inputState[0][0].value}
         totalBodyWeightValue={inputState[0][1].value}
         fatPercentageValue={inputState[0][2].value}
