@@ -4,4 +4,4 @@ I've re-written a website that I created to record my body measurements on a bi-
 
 https://github.com/lblake/body-analysis
 
-To use React instead of using HTML(Tables) CSS & Javascript.
+To use React instead of using HTML(Tables).
