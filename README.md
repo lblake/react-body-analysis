@@ -1,4 +1,4 @@
-# body-analysis React App
+# Body-Analysis React App
 
 I've re-written a website that I created to record my body measurements on a bi-weekly basis as part of my weight training regime.
 
