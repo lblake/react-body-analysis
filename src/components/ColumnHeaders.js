@@ -1,5 +1,4 @@
 const ColumnHeaders = (props) => {
-  console.log(props);
   return (
     <div>
       <h3>{props.dateText} </h3>
@@ -14,7 +13,6 @@ const ColumnHeaders = (props) => {
       <h3>{props.energyKCalText}</h3>
       <h3>{props.waistCMText}</h3>
       <h3>{props.hipsCMText}</h3>
-
     </div>
   );
 };

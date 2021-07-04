@@ -1,8 +1,8 @@
 const ColumnInputs = (props) => {
-  // console.log(props);
+  console.log(props);
   return (
     <div>
-      <input value={props.value} />
+      <input type='text' value={props.value} />
     </div>
   );
 };
