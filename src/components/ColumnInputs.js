@@ -1,9 +1,10 @@
 const ColumnInputs = (props) => {
-    return ( 
-        <div>
+  // console.log(props);
+  return (
+    <div>
+      <input value={props.value} />
+    </div>
+  );
+};
 
-        </div>
-     );
-}
- 
 export default ColumnInputs;
