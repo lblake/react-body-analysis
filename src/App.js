@@ -8,7 +8,7 @@ function App() {
     [
       {
         name: 'Date',
-        value: '',
+        value: '2018-07-22',
       },
       {
         name: 'Total Body Weight',
@@ -69,8 +69,9 @@ function App() {
   ]);
 
   const handleInput = (event) => {
+    // console.log(event.target.name);
     event.preventDefault();
-    setInputState({ value:event.target.value });
+    setInputState({ value: event.target.value });
   };
   return (
     <div>
@@ -91,19 +92,19 @@ function App() {
       />
 
       <ColumnInputs
-        onChange={handleInput}
-        dateValue={inputState[0][0].value}
-        totalBodyWeightValue={inputState[0][1].value}
-        fatPercentageValue={inputState[0][2].value}
-        fatKiloGram={inputState[0][3].value}
-        leanWeight={inputState[0][4].value}
-        waterPercentage={inputState[0][5].value}
-        totalBodyWater={inputState[0][6].value}
-        dryLeanWeight={inputState[0][7].value}
-        bmrKCal={inputState[0][8].value}
-        energyKCal={inputState[0][9].value}
-        waistCM={inputState[0][10].value}
-        hipsCM={inputState[0][11].value}
+        handleInputProp={handleInput}
+        dateProp={inputState[0][0].value}
+        totalBodyWeightProp={inputState[0][1].value}
+        fatPercentageProp={inputState[0][2].value}
+        fatKiloGramProp={inputState[0][3].value}
+        leanWeightProp={inputState[0][4].value}
+        waterPercentageProp={inputState[0][5].value}
+        totalBodyWaterProp={inputState[0][6].value}
+        dryLeanWeightProp={inputState[0][7].value}
+        bmrKCalProp={inputState[0][8].value}
+        energyKCalProp={inputState[0][9].value}
+        waistCMProp={inputState[0][10].value}
+        hipsCMProp={inputState[0][11].value}
       />
       <ColumnInputs />
       <ColumnInputs />
