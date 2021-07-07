@@ -7,7 +7,7 @@ function App() {
   const [inputState, setInputState] = useState([
     [
       {
-        name: 'Date',
+        name: 'date',
         value: '2018-07-22',
       },
       {
@@ -19,30 +19,35 @@ function App() {
         value: '',
         minRange: '16',
         maxRange: '20',
+        valid: '',
       },
       {
         name: 'Fat Kg',
         value: '',
         minRange: '12',
         maxRange: '15',
+        valid: '',
       },
       {
         name: 'Lean Weight',
         value: '',
         minRange: '62',
         maxRange: '65',
+        valid: '',
       },
       {
         name: 'Water %',
         value: '',
         minRange: '55',
         maxRange: '65',
+        valid: '',
       },
       {
         name: 'Total Body Water Ltr',
         value: '',
         minRange: '42',
         maxRange: '49',
+        valid: '',
       },
       {
         name: 'Dry Lean Kg',
@@ -65,7 +70,6 @@ function App() {
         value: '',
       },
     ],
-    [],
   ]);
 
   const handleInput = (event) => {
@@ -73,50 +77,52 @@ function App() {
     event.preventDefault();
     setInputState({ value: event.target.value });
   };
+
+  const myInputs = [];
+  for (let i = 0; i < 11; i++) {
+    myInputs.push(
+      <table>
+        <ColumnInputs
+          dateProp={inputState[i][0].value}
+          totalBodyWeightProp={inputState[i][1].value}
+          fatPercentageProp={inputState[i][2].value}
+          fatKiloGramProp={inputState[i][3].value}
+          leanWeightProp={inputState[i][4].value}
+          waterPercentageProp={inputState[i][5].value}
+          totalBodyWaterProp={inputState[i][6].value}
+          dryLeanWeightProp={inputState[i][7].value}
+          bmrKCalProp={inputState[i][8].value}
+          energyKCalProp={inputState[i][9].value}
+          waistCMProp={inputState[i][10].value}
+          hipsCMProp={inputState[i][11].value}
+          handleInputProp={handleInput}
+          indexProp={i}
+        />
+      </table>
+    );
+  }
+
   return (
     <div>
       <h1>BODY ANALYSIS</h1>
-      <ColumnHeaders
-        dateText={'Date'}
-        totalBodyText={'Total Body Weight'}
-        fatPercentageText={'Fat %'}
-        fatKiloGramText={'Fat Kg'}
-        leanWeightText={'Lean Weight'}
-        waterPercentageText={'Water %'}
-        totalBodyWaterText={'Total Body Water Ltr'}
-        dryLeanWeightText={'Dry Lean Kg'}
-        bmrKCalText={'BMR Kcal'}
-        energyKCalText={'Energy Kcal'}
-        waistCMText={'Waist cm'}
-        hipsCMText={'Hips cm'}
-      />
+      <table>
+        <ColumnHeaders
+          dateText={'Date'}
+          totalBodyText={'Total Body Weight'}
+          fatPercentageText={'Fat %'}
+          fatKiloGramText={'Fat Kg'}
+          leanWeightText={'Lean Weight'}
+          waterPercentageText={'Water %'}
+          totalBodyWaterText={'Total Body Water Ltr'}
+          dryLeanWeightText={'Dry Lean Kg'}
+          bmrKCalText={'BMR Kcal'}
+          energyKCalText={'Energy Kcal'}
+          waistCMText={'Waist cm'}
+          hipsCMText={'Hips cm'}
+        />
+      </table>
 
-      <ColumnInputs
-        handleInputProp={handleInput}
-        dateProp={inputState[0][0].value}
-        totalBodyWeightProp={inputState[0][1].value}
-        fatPercentageProp={inputState[0][2].value}
-        fatKiloGramProp={inputState[0][3].value}
-        leanWeightProp={inputState[0][4].value}
-        waterPercentageProp={inputState[0][5].value}
-        totalBodyWaterProp={inputState[0][6].value}
-        dryLeanWeightProp={inputState[0][7].value}
-        bmrKCalProp={inputState[0][8].value}
-        energyKCalProp={inputState[0][9].value}
-        waistCMProp={inputState[0][10].value}
-        hipsCMProp={inputState[0][11].value}
-      />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
-      <ColumnInputs />
+      {myInputs}
     </div>
   );
 }

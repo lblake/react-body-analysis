@@ -1,20 +1,57 @@
-const ColumnHeaders = (props) => {
+import React from 'react';
+
+const columnHeaders = (props) => {
   return (
     <div>
-      <h3>{props.dateText} </h3>
-      <h3>{props.totalBodyText}</h3>
-      <h3>{props.fatPercentageText}</h3>
-      <h3>{props.fatKiloGramText}</h3>
-      <h3>{props.leanWeightText}</h3>
-      <h3>{props.waterPercentageText}</h3>
-      <h3>{props.totalBodyWaterText}</h3>
-      <h3>{props.dryLeanWeightText}</h3>
-      <h3>{props.bmrKCalText}</h3>
-      <h3>{props.energyKCalText}</h3>
-      <h3>{props.waistCMText}</h3>
-      <h3>{props.hipsCMText}</h3>
+      <tr>
+        <td>{props.dateText} </td>
+      </tr>
+
+      <tr>
+        <td>{props.totalBodyText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.fatPercentageText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.fatKiloGramText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.leanWeightText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.waterPercentageText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.totalBodyWaterText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.dryLeanWeightText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.bmrKCalText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.energyKCalText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.waistCMText}</td>
+      </tr>
+
+      <tr>
+        <td>{props.hipsCMText}</td>
+      </tr>
     </div>
   );
 };
 
-export default ColumnHeaders;
+export default columnHeaders;
