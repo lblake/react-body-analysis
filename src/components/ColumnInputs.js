@@ -1,3 +1,5 @@
+import React from 'react';
+
 const columnInputs = (props) => {
   console.log(props);
   return (

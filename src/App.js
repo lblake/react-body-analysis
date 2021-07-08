@@ -77,8 +77,29 @@ function App() {
     const targetPropIndex = targetNameSplit[1];
     const targetStateIndex = targetNameSplit[2];
 
-    event.preventDefault();
-    setInputState({ value: event.target.value });
+    const oldState = [...inputState];
+
+    oldState[targetStateIndex][targetPropIndex].value = event.target.value;
+
+    if (oldState[targetStateIndex][targetPropIndex].value === '') {
+      oldState[targetStateIndex][targetPropIndex].valid = '';
+    } else if (oldState[targetStateIndex][targetPropIndex].rangeMax) {
+      if (
+        oldState[targetStateIndex][targetPropIndex].rangeMin <
+          oldState[targetStateIndex][targetPropIndex].value &&
+        oldState[targetStateIndex][targetPropIndex].value <
+          oldState[targetStateIndex][targetPropIndex].rangeMax
+      ) {
+        oldState[targetStateIndex][targetPropIndex].valid = 'yes';
+      } else {
+        oldState[targetStateIndex][targetPropIndex].valid = 'no';
+      }
+    }
+
+    setInputState(oldState);
+
+    // event.preventDefault();
+    // setInputState({ value: event.target.value });
   };
 
   const myInputs = [];
