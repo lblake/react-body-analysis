@@ -73,7 +73,10 @@ function App() {
   ]);
 
   const handleInput = (event) => {
-    // console.log(event.target.name);
+    const targetNameSplit = event.target.name.split('-');
+    const targetPropIndex = targetNameSplit[1];
+    const targetStateIndex = targetNameSplit[2];
+
     event.preventDefault();
     setInputState({ value: event.target.value });
   };
